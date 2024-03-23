@@ -1,0 +1,44 @@
+{
+  "items": [
+    {
+      "name": "Tom Kha Gai",
+      "price": 4.5
+    },
+    {
+      "name": "Tom Kha Gai",
+      "price": 4.5
+    },
+    {
+      "name": "Pad Thai Noodles",
+      "price": 11
+    },
+    {
+      "name": "Tom Yum Soup",
+      "price": 4.5
+    },
+    {
+      "name": "Tom Yum Soup",
+      "price": 4.5
+    },
+    {
+      "name": "Pancit Noodle Combo",
+      "price": 16.75
+    },
+    {
+      "name": "Pancit Noodle Combo",
+      "price": 16.75
+    },
+    {
+      "name": "White Steamed Jasmine Rice",
+      "price": 11
+    },
+    {
+      "name": "White Steamed Jasmine Rice",
+      "price": 11
+    },
+    {
+      "name": "Pancit Noodle Combo",
+      "price": 16.75
+    }
+  ]
+}

@@ -3,44 +3,226 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src = "https://unpkg.com/axios/dist/axios.min.js"></script>
     <link rel="stylesheet" href="app.css">
-    <title>Elephant Bistro</title>
+    <title>Pinoy and Thai</title>
 </head>
 <body>
     <header class="homepage-header">
-        <h1>Welcome to Elephant Bistro</h1>
-        <p>Discover flavors that will leave you trumpeting for more!</p>
+        <h1>Welcome to Pinoy and Thai</h1>
+        <p>Discover flavors that will leave you wanting for more!</p>
     </header>
-    <section class="homepage-content">
-        <h2>Our Southeast Asian Delights</h2>
-        <div class="menu-item">
-            <img src="https://www.recipetineats.com/wp-content/uploads/2020/01/Chicken-Pad-Thai_9-SQ.jpg" alt="Pad Thai">
-            <h3>Pad Thai</h3>
-            <p>A classic Thai stir-fried noodle dish with tamarind sauce, shrimp, tofu, bean sprouts, and crushed peanuts.</p>
-        </div>
-        <div class="menu-item">
-            <img src="green_curry.jpg" alt="Green Curry">
-            <h3>Green Curry</h3>
-            <p>A fragrant Thai curry made with coconut milk, green chili, basil, and your choice of protein (chicken, beef, or tofu).</p>
-        </div>
-        <div class="menu-item">
-            <img src="nasi_goreng.jpg" alt="Nasi Goreng">
-            <h3>Nasi Goreng</h3>
-            <p>Indonesian fried rice seasoned with sweet soy sauce, garlic, shallots, and topped with a fried egg.</p>
-        </div>
-        <div class="menu-item">
-            <img src="banh_mi.jpg" alt="Banh Mi">
-            <h3>Banh Mi</h3>
-            <p>A Vietnamese sandwich filled with grilled meat (usually pork), pickled vegetables, fresh herbs, and a crusty baguette.</p>
-        </div>
-        <div class="menu-item">
-            <img src="laksa.jpg" alt="Laksa">
-            <h3>Laksa</h3>
-            <p>A spicy Malaysian soup with coconut milk, rice noodles, shrimp, chicken, and bean sprouts.</p>
-        </div>
+    <section class="menu-section">
+        <h2>
+          <img src="https://hot-thai-kitchen.com/wp-content/uploads/2014/06/Tom-kha-gai-new-sq.jpg"> <br>
+          Soups
+        </h2>
+        <table class="menu-table">
+          <tr>
+              <td>
+                  <button onclick="addToCart('Tom Kha Gai', 4.50)">Tom Kha Gai</button>
+                  <p>Price: $4.50</p>
+              </td>
+              <td>
+                  <button onclick="addToCart('Tom Yum Soup', 4.50)">Tom Yum Soup</button>
+                  <p>Price: $4.50</p>
+              </td>
+          </tr>
+          <tr>
+              <td>
+                  <button onclick="addToCart('Shrimp Soup with Coconut Milk', 6.50)">Shrimp Soup with Coconut Milk</button>
+                  <p>Price: $6.50</p>
+              </td>
+              <td>
+                  <button onclick="addToCart('Spicy Shrimp Soup', 6.50)">Spicy Shrimp Soup</button>
+                  <p>Price: $6.50</p>
+              </td>
+          </tr>
+      </table>
+
+    </section>
+    <section class="menu-section">
+        <h2><img src="https://www.eatwithcarmen.com/wp-content/uploads/2022/09/chicken-adobo_.jpg"> <br>Pinoy Entrees</h2>
+        <table class="menu-table">
+          <tr>
+              <td>
+                  <button onclick="addToCart('Adobo', 11.00)">Adobo</button>
+                  <p>Price: $11.00</p>
+              </td>
+              <td>
+                  <button onclick="addToCart('Pinoy Curry in Coconut Milk', 11.00)">Pinoy Curry</button>
+                  <p>Price: $11.00</p>
+              </td>
+          </tr>
+          <tr>
+              <td>
+                  <button onclick="addToCart('Mechado', 11.00)">Mechado</button>
+                  <p>Price: $11.00</p>
+              </td>
+              <td>
+                  <button onclick="addToCart('Afritado', 11.00)">Afritado</button>
+                  <p>Price: $11.00</p>
+              </td>
+          </tr>
+          <tr>
+              <td>
+                  <button onclick="addToCart('Pineapple Chicken', 11.00)">Pineapple Chicken</button>
+                  <p>Price: $11.00</p>
+              </td>
+              <td>
+                  <button onclick="addToCart('Bicol Express', 11.00)">Bicol Express</button>
+                  <p>Price: $11.00</p>
+              </td>
+          </tr>
+          <tr>
+              <td>
+                  <button onclick="addToCart('Sinigang Pork', 11.00)">Sinigang Pork</button>
+                  <p>Price: $11.00</p>
+              </td>
+          </tr>
+      </table>
+    </section>
+    <section class="menu-section">
+        <h2><img src="https://www.allrecipes.com/thmb/PFfi1nM5cx4AsOfgu26c82rEIuw=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/RM-237899-FilippinoLechonKawali-ddmfs-3x4-6354-acd2f1895a5c4c8a92ad4d33d48bc837.jpg"> <br>Signature Entrees</h2>
+        <table class="menu-table">
+          <tr>
+              <td>
+                  <button onclick="addToCart('Lechon Kawali', 15.50)">Lechon Kawali</button>
+                  <p>Price: $15.50</p>
+              </td>
+              <td>
+                  <button onclick="addToCart('Kare-Kare', 15.50)">Kare-Kare</button>
+                  <p>Price: $15.50</p>
+              </td>
+          </tr>
+          <tr>
+              <td>
+                  <button onclick="addToCart('Kaldereta', 15.50)">Kaldereta</button>
+                  <p>Price: $15.50</p>
+              </td>
+          </tr>
+      </table>
+    </section>
+    <section class="menu-section">
+        <h2><img src=https://www.riversidethaicooking.com/wp-content/uploads/2020/05/Sweet-Sour-chicken-new-feature.jpg> <br>Thai Entrees</h2>
+        <table class="menu-table">
+          <tr>
+              <td>
+                  <button onclick="addToCart('Sweet and Sour Curry', 11.00)">Sweet and Sour</button>
+                  <p>Price: $11.00</p>
+              </td>
+              <td>
+                  <button onclick="addToCart('Basil Curry', 11.00)">Basil</button>
+                  <p>Price: $11.00</p>
+              </td>
+          </tr>
+          <tr>
+              <td>
+                  <button onclick="addToCart('Red Curry', 11.00)">Red Curry</button>
+                  <p>Price: $11.00</p>
+              </td>
+              <td>
+                  <button onclick="addToCart('Green Curry', 11.00)">Green Curry</button>
+                  <p>Price: $11.00</p>
+              </td>
+          </tr>
+          <tr>
+              <td>
+                  <button onclick="addToCart('Vegetable Fried Rice', 9.50)">Vegetable Fried Rice</button>
+                  <p>Price: $9.50</p>
+              </td>
+              <td>
+                  <button onclick="addToCart('Chicken Fried Rice', 11.00)">Chicken Fried Rice</button>
+                  <p>Price: $11.00</p>
+              </td>
+          </tr>
+          <tr>
+              <td>
+                  <button onclick="addToCart('Pork Fried Rice', 11.00)">Pork Fried Rice</button>
+                  <p>Price: $11.00</p>
+              </td>
+              <td>
+                  <button onclick="addToCart('Beef Fried Rice', 15.50)">Beef Fried Rice</button>
+                  <p>Price: $15.50</p>
+              </td>
+          </tr>
+          <tr>
+              <td>
+                  <button onclick="addToCart('Shrimp Fried Rice', 15.50)">Shrimp Fried Rice</button>
+                  <p>Price: $15.50</p>
+              </td>
+              <td>
+                  <button onclick="addToCart('Combo Fried Rice', 16.75)">Combo Fried Rice</button>
+                  <p>Price: $16.75</p>
+              </td>
+          </tr>
+      </table>
+    </section>
+    <section class="menu-section">
+        <h2><img src=https://ahealthymakeover.com/wp-content/uploads/2013/02/IMG_5187.jpg> <br>Pinoy Noodles</h2>
+        <table class="menu-table">
+          <tr>
+              <td>
+                  <button onclick="addToCart('Pancit Noodles', 11.00)">Pancit Noodles</button>
+                  <p>Price: $11.00</p>
+              </td>
+              <td>
+                  <button onclick="addToCart('Pancit Noodle Combo', 16.75)">Pancit Noodle Combo</button>
+                  <p>Price: $16.75</p>
+              </td>
+          </tr>
+      </table>
+    </section>
+    <section class="menu-section">
+        <h2><img src=https://www.recipetineats.com/wp-content/uploads/2020/01/Chicken-Pad-Thai_9-SQ.jpg> <br>Thai Noodles</h2>
+        <table class="menu-table">
+          <tr>
+              <td>
+                  <button onclick="addToCart('Pad Thai Noodles', 11.00)">Pad Thai Noodles</button>
+                  <p>Price: $11.00</p>
+              </td>
+              <td>
+                  <button onclick="addToCart('Pad Woon Sen Noodles', 11.00)">Pad Woon Sen Noodles</button>
+                  <p>Price: $11.00</p>
+              </td>
+          </tr>
+          <tr>
+              <td>
+                  <button onclick="addToCart('Pad Khee Mao Noodles', 11.00)">Pad Khee Mao Noodles</button>
+                  <p>Price: $11.00</p>
+              </td>
+          </tr>
+      </table>
+    </section>
+    <section class="menu-section">
+        <h2><img src=https://www.recipetineats.com/wp-content/uploads/2020/06/Jasmine-Rice_8.jpg> <br>Rice</h2>
+        <table class="menu-table">
+          <tr>
+              <td>
+                  <button onclick="addToCart('White Steamed Jasmine Rice', 2.50)">White Steamed Jasmine Rice</button>
+                  <p>Price: $2.50</p>
+              </td>
+              <td>
+                  <button onclick="addToCart('Garlic Rice', 6.00)">Garlic Rice</button>
+                  <p>Price: $6.00</p>
+              </td>
+          </tr>
+      </table>
     </section>
     <footer class="homepage-footer">
-        © 2024 Elephant Bistro
+        © 2024 Pinoy and Thai
     </footer>
 </body>
+<script>
+  function addToCart(itemName, itemPrice) {
+    axios({
+        method: 'post',
+        url: 'http://localhost:5500/add-to-cart',
+        data: {
+          name: itemName || "",
+          price: itemPrice || "",
+        }
+      })
+  }
+</script>
 </html>

@@ -15,13 +15,13 @@ import { JSONFile } from 'lowdb/node'
 //Set up Express App for use
 //Line 12-13 set up the CORS policy and the request body parser (don't worry about this, it scares me too)
 const app = express()
-const port = 3001
+const port = 5500
 app.use(cors())
 app.use(express.json());
 
 // Use JSON file for storage
 //Where I got this: https://github.com/typicode/lowdb
-const file = './db.json' 
+const file = './cart.json' 
 const adapter = new JSONFile(file)
 const db = new Low(adapter)
 
@@ -30,7 +30,7 @@ const db = new Low(adapter)
 //If it does exist, do nothing. db.data will be ready for use.
 //Where I got this: https://github.com/typicode/lowdb
 await db.read()
-db.data ||= { jokes: [] } 
+db.data ||= { items: [] } 
 await db.write()
 
 /*
@@ -41,17 +41,17 @@ We want this section to:
   - Update the jokes array in our database
   - Respond with a successful status code (200)
 */
-app.post('/save-joke', async (req, res) => {
+app.post('/add-to-cart', async (req, res) => {
   console.log("POST endpoint hit!")
 
-  let joke = {
-    joke: req.body.joke,
-    delivery: req.body.delivery,
+  let item = {
+    name: req.body.name,
+    price: req.body.price,
   };
 
   await db.read();
-  const { jokes } = db.data;
-  jokes.push(joke);
+  const { items } = db.data;
+  items.push(item);
   await db.write();
 })
 
