@@ -1,83 +1,46 @@
 <!DOCTYPE html>
-<html>
-  <!-- IMPORT STUFF AND SET TITLE HERE-->
-  <head>
-    <title>Aggie Jokez</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
-    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="app.css">
-  </head> 
-  
-  <!-- IMPORT OUR ARRAY OF JOKES -->
-  <script src="output.js">
-  </script>
-
-  <script>
-    //Makes a post request to our database to save joke
-    function handleSave() {
-      let primary = document.getElementById("title").innerHTML;
-      let secondary = document.getElementById("author").innerHTML;
-
-      axios({
-        method: 'post',
-        url: 'http://localhost:3001/save-joke',
-        data: {
-          joke: primary || "",
-          delivery: secondary || "",
-        }
-      })
-    }
-  </script>
-
-  <!-- ANYTHING HERE SHOWS UP ON THE WEBSITE -->
-  <body>
-    <div id="main-card" class="card">
-      <div class="card-content">
-        <p id="title" class="title">Loading...</p>
-        <p id="author" class="subtitle">Loading...</p>
-      </div>
-      <footer class="card-footer">
-        <a onclick="window.location.reload()" class="card-footer-item">
-          Next Joke
-        </a>
-        <a onclick="handleSave()" class="card-footer-item">
-          Save Joke
-        </a>
-      </footer>
-    </div>
-  </body>
-
-  <!-- <script>
-    let randomNum = Math.floor(Math.random() * 251);
-    let joke = jokes[randomNum];
-
-    titleElem = document.getElementById("title");
-    authorElem = document.getElementById("author");
-
-    titleElem.innerHTML = joke["joke"];
-    authorElem.innerHTML = joke["first name"];
-  </script> -->
-
-  <script>
-    //makes a get request to our database to get a random joke
-    axios({
-      method: 'get',
-      url: 'http://localhost:3001/',
-    })
-    .then(function (response) {
-      //inserts joke into the card
-      let data = response.data;
-      let joke = data.joke || data.setup;
-      let answer = data.delivery || "";
-
-      titleElem = document.getElementById("title");
-      authorElem = document.getElementById("author");
-
-      titleElem.innerHTML = joke
-      authorElem.innerHTML = answer
-    });
-  </script>
-
-
+    <title>Elephant Bistro</title>
+</head>
+<body>
+    <header class="homepage-header">
+        <h1>Welcome to Elephant Bistro</h1>
+        <p>Discover flavors that will leave you trumpeting for more!</p>
+    </header>
+    <section class="homepage-content">
+        <h2>Our Southeast Asian Delights</h2>
+        <div class="menu-item">
+            <img src="https://www.recipetineats.com/wp-content/uploads/2020/01/Chicken-Pad-Thai_9-SQ.jpg" alt="Pad Thai">
+            <h3>Pad Thai</h3>
+            <p>A classic Thai stir-fried noodle dish with tamarind sauce, shrimp, tofu, bean sprouts, and crushed peanuts.</p>
+        </div>
+        <div class="menu-item">
+            <img src="green_curry.jpg" alt="Green Curry">
+            <h3>Green Curry</h3>
+            <p>A fragrant Thai curry made with coconut milk, green chili, basil, and your choice of protein (chicken, beef, or tofu).</p>
+        </div>
+        <div class="menu-item">
+            <img src="nasi_goreng.jpg" alt="Nasi Goreng">
+            <h3>Nasi Goreng</h3>
+            <p>Indonesian fried rice seasoned with sweet soy sauce, garlic, shallots, and topped with a fried egg.</p>
+        </div>
+        <div class="menu-item">
+            <img src="banh_mi.jpg" alt="Banh Mi">
+            <h3>Banh Mi</h3>
+            <p>A Vietnamese sandwich filled with grilled meat (usually pork), pickled vegetables, fresh herbs, and a crusty baguette.</p>
+        </div>
+        <div class="menu-item">
+            <img src="laksa.jpg" alt="Laksa">
+            <h3>Laksa</h3>
+            <p>A spicy Malaysian soup with coconut milk, rice noodles, shrimp, chicken, and bean sprouts.</p>
+        </div>
+    </section>
+    <footer class="homepage-footer">
+        © 2024 Elephant Bistro
+    </footer>
+</body>
 </html>
-

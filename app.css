@@ -1,6 +1,45 @@
-#main-card {
-    margin-top: 30vh;
-    margin-left: 20vw;
-    margin-right: 20vw;
-    border: 1px solid lightgray;
+/* Global styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f8b11a; /* Yellow background for the entire site */
+}
+
+/* Homepage styles */
+.homepage-header {
+    background-color: #dd7230; /* Orange header background */
+    color: #fff;
+    text-align: center;
+    padding: 2rem;
+}
+
+.homepage-content {
+    /* Add your homepage content styles here */
+}
+
+.homepage-footer {
+    background-color: #04030f; /* Dark footer background */
+    color: #fff;
+    text-align: center;
+    padding: 1rem;
+}
+
+/* Menu page styles */
+.menu-header {
+    background-color: #077b31; /* Green header background */
+    color: #fff;
+    text-align: center;
+    padding: 2rem;
+}
+
+.menu-items {
+    /* Add your menu item styles here */
+}
+
+.menu-footer {
+    background-color: #0c1414; /* Dark footer background */
+    color: #fff;
+    text-align: center;
+    padding: 1rem;
 }
