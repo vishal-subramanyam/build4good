@@ -1,4 +1,4 @@
-//Backend for our application
+//Backend for our application:
 //This needs to be constantly running in order for the front-end to work
 //To start the backend locally, run "node app.js" in the terminal
 //In order to make this available "publicly", you will need to deploy it to a server
@@ -11,7 +11,6 @@ import cors from 'cors';
 import axios from 'axios';
 import { Low } from 'lowdb'
 import { JSONFile } from 'lowdb/node'
-
 
 //Set up Express App for use
 //Line 12-13 set up the CORS policy and the request body parser (don't worry about this, it scares me too)
@@ -43,7 +42,17 @@ We want this section to:
   - Respond with a successful status code (200)
 */
 app.post('/save-joke', async (req, res) => {
+  console.log("POST endpoint hit!")
 
+  let joke = {
+    joke: req.body.joke,
+    delivery: req.body.delivery,
+  };
+
+  await db.read();
+  const { jokes } = db.data;
+  jokes.push(joke);
+  await db.write();
 })
 
 /*
@@ -55,7 +64,21 @@ We want this section to:
   - Respond with a successful status code (200)
 */
 app.get('/', (req, res) => {
+  console.log("GET endpoint hit!")
+  axios({
+    method: 'get',
+    url: 'https://v2.jokeapi.dev/joke/Any?blacklistFlags=nsfw,religious,political,racist,sexist,explicit',
+  })
+  .then(function (response) {
+    res.send(response.data)
+  });
+})
 
+app.get('/saved-jokes', async (req, res) => {
+  console.log("GET endpoint hit!")
+  await db.read();
+  const { jokes } = db.data;
+  res.send(jokes);
 })
 
 //Start the app on the specified port. Any request to the app should be made to localhost:{port}
